@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option go_package = "github.com/vlgunarathne/pkg/spicedb";
+
+package viduranga.proxy.spicedb;
+
+service ProxyServiceSpiceDB {
+    rpc SayHelloProxy (HelloProxyRequest) returns (HelloProxyReply) {}
+}
+
+message HelloProxyRequest {
+    string permission = 1;
+    Resource resource = 2;
+    Subject subject = 3;
+}
+  
+message HelloProxyReply {
+  string permissionship = 1;
+}
+
+message Resource {
+    string object_id = 1;
+    string object_type =2;
+}
+
+message Subject {
+    Object object = 1;
+}
+
+message Object {
+    string object_id = 1;
+    string object_type = 2;
+}
